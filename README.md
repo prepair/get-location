@@ -12,3 +12,4 @@ Pilot project.
 - [ ] npm publish with semver-semrel
 - [ ] travis ci
 - [ ] tests
+- [ ] hooks (husky)

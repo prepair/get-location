@@ -4,7 +4,8 @@
   "description": "Get geolocation with a promise.",
   "main": "todo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint lib"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/prepair/get-location/issues"
   },
-  "homepage": "https://github.com/prepair/get-location#readme"
+  "homepage": "https://github.com/prepair/get-location#readme",
+  "devDependencies": {
+    "eslint": "3.14.0",
+    "eslint-config-semistandard": "7.0.0",
+    "eslint-config-standard": "6.2.1",
+    "eslint-plugin-promise": "3.4.0",
+    "eslint-plugin-react": "6.9.0",
+    "eslint-plugin-standard": "2.0.1"
+  }
 }
