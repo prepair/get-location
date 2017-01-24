@@ -6,9 +6,9 @@ Pilot project.
 
 ## TODO
 
-- [ ] browserify, babelify
-- [ ] eslint semistandard
-- [ ] build (dist)
+- [ ] browserify, babelify, babel??
+- [X] eslint semistandard
+- [ ] build (dist or lib)
 - [ ] npm publish with semver-semrel
 - [ ] travis ci
 - [ ] tests

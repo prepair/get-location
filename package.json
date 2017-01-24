@@ -2,10 +2,12 @@
   "name": "get-location",
   "version": "0.0.1",
   "description": "Get geolocation with a promise.",
-  "main": "todo.js",
+  "main": "lib/get-location.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint lib"
+    "lint": "eslint src",
+    "build": "shx rm -rf lib && babel src --ignore spec.js -d lib",
+    "test": "cross-env NODE_ENV=test mocha --opts ./mocha.opts",
+    "test:watch": "npm t -- --watch --reporter min"
   },
   "repository": {
     "type": "git",
@@ -14,18 +16,27 @@
   "keywords": [
     "geolocation"
   ],
-  "author": "",
+  "author": "prepair",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/prepair/get-location/issues"
   },
   "homepage": "https://github.com/prepair/get-location#readme",
   "devDependencies": {
+    "babel-cli": "6.22.2",
+    "babel-core": "6.22.1",
+    "babel-preset-node6": "11.0.0",
+    "chai": "3.5.0",
+    "cross-env": "3.1.4",
     "eslint": "3.14.0",
     "eslint-config-semistandard": "7.0.0",
     "eslint-config-standard": "6.2.1",
     "eslint-plugin-promise": "3.4.0",
     "eslint-plugin-react": "6.9.0",
-    "eslint-plugin-standard": "2.0.1"
+    "eslint-plugin-standard": "2.0.1",
+    "gulp": "3.9.1",
+    "mocha": "3.2.0",
+    "shx": "0.2.2",
+    "sinon": "1.17.7"
   }
 }
