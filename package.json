@@ -1,0 +1,22 @@
+{
+  "name": "get-location",
+  "version": "0.0.1",
+  "description": "Get geolocation with a promise.",
+  "main": "todo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prepair/get-location.git"
+  },
+  "keywords": [
+    "geolocation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prepair/get-location/issues"
+  },
+  "homepage": "https://github.com/prepair/get-location#readme"
+}
