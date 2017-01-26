@@ -1,15 +1,24 @@
 # get-location
 
-Get geolocation with a promise. Requires browser environment (es2015 webpack/babel).
+Get geolocation with a promise.
 
-Pilot project.
+## installation
 
-## TODO
+```shell
+npm i -S @prepair/get-location
+```
 
-- [x] browserify, babelify, babel?? -> only for testing, use webpack
-- [x] eslint semistandard
-- [x] build (dist or lib) -> nope
-- [ ] npm publish with semver-semrel
-- [ ] travis ci
-- [x] tests
-- [ ] hooks (husky)
+* Requires browser environment (es2015 webpack/babel transpiler).
+* Promise, import (no shims)
+
+## usage
+
+```js
+import getLocation from '@prepair/get-location';
+
+document.addEventListener('DOMContentLoaded', () => {
+  getLocation()
+    .then(data => console.log(data.coords))
+    .catch(console.error);
+});
+```
