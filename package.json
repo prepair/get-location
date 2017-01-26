@@ -1,13 +1,14 @@
 {
   "name": "@prepair/get-location",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Get geolocation with a promise.",
   "main": "lib/get-location.js",
   "scripts": {
     "lint": "eslint lib",
     "test": "cross-env NODE_ENV=test mocha --opts ./mocha.opts",
     "test:watch": "npm t -- --watch --reporter min",
-    "precommit": "npm run lint && npm test"
+    "precommit": "npm run lint && npm test",
+    "sv": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -37,9 +38,9 @@
     "gulp": "3.9.1",
     "husky": "0.13.1",
     "mocha": "3.2.0",
-    "semantic-release": "6.3.2",
     "shx": "0.2.2",
-    "sinon": "1.17.7"
+    "sinon": "1.17.7",
+    "standard-version": "4.0.0"
   },
   "directories": {
     "test": "test"
