@@ -1,15 +1,15 @@
 # get-location
 
-Get geolocation with a promise.
+Get geolocation with a promise. Requires browser environment (es2015 webpack/babel).
 
 Pilot project.
 
 ## TODO
 
-- [ ] browserify, babelify, babel??
-- [X] eslint semistandard
-- [ ] build (dist or lib)
+- [x] browserify, babelify, babel?? -> only for testing, use webpack
+- [x] eslint semistandard
+- [x] build (dist or lib) -> nope
 - [ ] npm publish with semver-semrel
 - [ ] travis ci
-- [ ] tests
+- [x] tests
 - [ ] hooks (husky)
