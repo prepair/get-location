@@ -1,6 +1,6 @@
 {
   "name": "@prepair/get-location",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Get geolocation with a promise.",
   "main": "lib/get-location.js",
   "scripts": {
