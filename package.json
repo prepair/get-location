@@ -1,6 +1,6 @@
 {
   "name": "@prepair/get-location",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get geolocation with a promise.",
   "main": "lib/get-location.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "cross-env NODE_ENV=test mocha --opts ./mocha.opts",
     "test:watch": "npm t -- --watch --reporter min",
     "precommit": "npm run lint && npm test",
-    "release": "git checkout master; git pull origin master && standard-version && git push --follow-tags origin master; npm publish --access=public"
+    "release": "git checkout master && git pull origin master && standard-version && git push --follow-tags origin master && npm publish --access=public"
   },
   "repository": {
     "type": "git",
