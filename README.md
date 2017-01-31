@@ -1,19 +1,20 @@
 # get-location
 
-Get geolocation with a promise. Requires browser environment (es2015 webpack/babel).
+Get geolocation with a promise.
 
 ## installation
 
-```
+```shell
 npm i -S @prepair/get-location
 ```
 
-Requires es2016 context, use babel/webpack.
+* Requires browser environment (es2015 webpack/babel transpiler).
+* Promise, import (no shims)
 
 ## usage
 
-```
-import getLocation, { hasGeoApi } from './get-location';
+```js
+import getLocation, { hasGeoApi } from '@prepair/get-location';
 
 console.log(hasGeoApi); // true or false
 
