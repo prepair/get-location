@@ -18,7 +18,14 @@ import getLocation, { hasGeoApi } from '@prepair/get-location';
 
 console.log(hasGeoApi); // true or false
 
-getLocation()
+getLocation({
+    // https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: Infinity
+    // extensions
+    precision: 6
+  })
   .then(loc => console.log(loc.coords))
   .catch(console.error);
 ```
