@@ -29,3 +29,10 @@ getLocation({
   .then(loc => console.log(loc.coords))
   .catch(console.error);
 ```
+
+## caveats
+
+Using the additional parameters (`precision` for now) will clone the result object,
+which would be read only otherwise. Clone deep is manual and deterministic, further
+api changes in the `Geoposition` object will not be reflected. Do NOT use `instanceOf`
+on the result.
