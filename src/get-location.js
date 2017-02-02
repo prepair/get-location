@@ -1,25 +1,19 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = getLocation;
-function objectGet(object, expression) {
+function objectGet (object, expression) {
   return expression.trim().split('.').reduce((prev, curr) => prev && prev[curr], object);
 }
 
-function detectGeoApi() {
+function detectGeoApi () {
   return typeof objectGet(typeof window !== 'undefined' ? window : {}, 'navigator.geolocation.getCurrentPosition') === 'function';
 }
 
-function round(val, precision) {
+function round (val, precision) {
   return Math.floor(val * Math.pow(10, precision)) / Math.pow(10, precision);
 }
 
 // geopos is read only in the browser context, this effectively freezes
 // the geoposition + coord objects, which may not be that great
 // see also: https://www.npmjs.com/package/geoposition-to-object
-function cloneGeo(gl) {
+function cloneGeo (gl) {
   let ret = { timestamp: gl.timestamp, coords: {} };
   let coordKeys = ['accuracy', 'altitude', 'altitudeAccuracy', 'heading', 'latitude', 'longitude', 'speed'];
   coordKeys.forEach(key => {
@@ -30,13 +24,12 @@ function cloneGeo(gl) {
   return ret;
 }
 
-const hasGeoApi = exports.hasGeoApi = detectGeoApi();
+export const hasGeoApi = detectGeoApi();
 
-function getLocation(options) {
+export default function getLocation (options) {
   let precision = (options || {}).precision;
   let hasPrecision = typeof precision === 'number';
-  if (hasPrecision) {
-    // this is not an official parameter, throw it away
+  if (hasPrecision) { // this is not an official parameter, throw it away
     delete options.precision;
   }
 

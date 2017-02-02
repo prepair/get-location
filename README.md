@@ -8,8 +8,8 @@ Get geolocation with a promise.
 npm i -S @prepair/get-location
 ```
 
-* Requires browser environment (es2015 webpack/babel transpiler).
-* Promise, import (no shims)
+* Requires browser environment (geolocation api).
+* Transpiled to node v6+ context (no need for [mocha babel workarounds](https://github.com/react-native-material-design/react-native-material-design/issues/103)).
 
 ## usage
 

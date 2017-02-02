@@ -4,9 +4,10 @@
   "description": "Get geolocation with a promise.",
   "main": "lib/get-location.js",
   "scripts": {
-    "lint": "eslint lib",
+    "lint": "eslint src",
     "test": "cross-env NODE_ENV=test mocha --opts ./mocha.opts",
     "test:watch": "npm t -- --watch --reporter min",
+    "build": "shx rm -rf lib && babel src --ignore spec.js -d lib",
     "precommit": "npm run lint && npm test",
     "release": "git checkout master && git pull origin master && standard-version && git push --follow-tags origin master && npm publish --access=public"
   },
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/prepair/get-location#readme",
   "devDependencies": {
+    "babel-cli": "6.22.2",
     "babel-core": "6.22.1",
     "babel-preset-node6": "11.0.0",
     "chai": "3.5.0",
