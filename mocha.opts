@@ -1,10 +1,10 @@
 --require babel-core/register
 test/setup.js
-lib/**/*.spec.js
-lib/**/**/*.spec.js
-lib/**/**/**/*.spec.js
-lib/**/**/**/**/*.spec.js
-lib/**/**/**/**/**/*.spec.js
-lib/**/**/**/**/**/**/*.spec.js
-lib/**/**/**/**/**/**/**/*.spec.js
-lib/**/**/**/**/**/**/**/**/*.spec.js
+src/**/*.spec.js
+src/**/**/*.spec.js
+src/**/**/**/*.spec.js
+src/**/**/**/**/*.spec.js
+src/**/**/**/**/**/*.spec.js
+src/**/**/**/**/**/**/*.spec.js
+src/**/**/**/**/**/**/**/*.spec.js
+src/**/**/**/**/**/**/**/**/*.spec.js
