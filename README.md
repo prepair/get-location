@@ -13,10 +13,18 @@ npm i -S @prepair/get-location
 
 ## usage
 
+### hasGeoApi
+
 ```js
-import getLocation, { hasGeoApi } from '@prepair/get-location';
+import { hasGeoApi } from '@prepair/get-location';
 
 console.log(hasGeoApi); // true or false
+```
+
+### getLocation
+
+```js
+import getLocation from '@prepair/get-location';
 
 getLocation({
     // https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions
@@ -28,6 +36,15 @@ getLocation({
   })
   .then(loc => console.log(loc.coords))
   .catch(console.error);
+```
+
+### setup
+
+```js
+import getLocation, { setup as getLocationSetup } from '@prepair/get-location';
+
+getLocationSetup({ precision: 0 });
+getLocation().then(console.log);
 ```
 
 ## caveats

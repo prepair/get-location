@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import getLocation, { hasGeoApi } from './get-location';
+import getLocation, { setup, teardown, hasGeoApi } from './get-location';
 
 describe('get-location', () => {
   let geoData = {
@@ -20,6 +20,10 @@ describe('get-location', () => {
     global.window = { navigator };
   });
 
+  afterEach(() => {
+    teardown();
+  });
+
   it('should get location from browser geolocation api using a promise', function * () {
     let loc = yield getLocation();
     expect(navigator.geolocation.getCurrentPosition).to.have.been.called;
@@ -37,6 +41,19 @@ describe('get-location', () => {
       },
       timestamp: 1485433339015
     });
+  });
+
+  it('should be able to setup a global parameter object', function * () {
+    setup({ precision: 0 });
+    let loc = yield getLocation({ precision: 3 });
+    expect(loc.coords.latitude).to.equal(47);
+    expect(loc.coords.longitude).to.equal(19);
+
+    // mostly for testing
+    teardown();
+    loc = yield getLocation();
+    expect(loc.coords.latitude).to.equal(47.4735167);
+    expect(loc.coords.longitude).to.equal(19.14525489998);
   });
 
   it('should not remove real api params', function * () {

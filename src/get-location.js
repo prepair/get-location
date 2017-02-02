@@ -24,9 +24,24 @@ function cloneGeo (gl) {
   return ret;
 }
 
+// ----
+
 export const hasGeoApi = detectGeoApi();
 
+let globalOptions;
+export function setup (options) {
+  globalOptions = Object.assign({}, globalOptions, options);
+}
+
+export function teardown () {
+  globalOptions = null;
+}
+
 export default function getLocation (options) {
+  if (globalOptions) {
+    options = Object.assign({}, options, globalOptions);
+  }
+
   let precision = (options || {}).precision;
   let hasPrecision = typeof precision === 'number';
   if (hasPrecision) { // this is not an official parameter, throw it away
@@ -42,7 +57,7 @@ export default function getLocation (options) {
       let longitude = objectGet(position, 'coords.longitude');
       let clone;
       if (hasPrecision) {
-        clone = cloneGeo(position); // poor man's clonedeep
+        clone = cloneGeo(position);
         if (latitude) {
           clone.coords.latitude = round(latitude, precision);
         }
