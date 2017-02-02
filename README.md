@@ -53,3 +53,9 @@ Using the additional parameters (`precision` for now) will clone the result obje
 which would be read only otherwise. Clone deep is manual and deterministic, further
 api changes in the `Geoposition` object will not be reflected. Do NOT use `instanceOf`
 on the result.
+
+## development
+
+* the node context is not exactly the same as the browser context (hence the `typeof window`)
+* `npm run release` now does a test build, so the release will **fail** if you have an outdated
+  lib, in that case do a `chore(build): latest lib` commit
