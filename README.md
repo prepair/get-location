@@ -9,7 +9,7 @@ npm i -S @prepair/get-location
 ```
 
 * Requires browser environment (geolocation api).
-* Transpiled to node v6+ context (no need for [mocha babel workarounds](https://github.com/react-native-material-design/react-native-material-design/issues/103)).
+* Transpiled to es2015+ie context (polyfills not included).
 
 ## usage
 

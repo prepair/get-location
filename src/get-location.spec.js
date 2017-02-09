@@ -24,14 +24,14 @@ describe('get-location', () => {
     teardown();
   });
 
-  it('should get location from browser geolocation api using a promise', function * () {
-    let loc = yield getLocation();
+  it('should get location from browser geolocation api using a promise', async function () {
+    let loc = await getLocation();
     expect(navigator.geolocation.getCurrentPosition).to.have.been.called;
     expect(loc).to.eql(geoData);
   });
 
-  it('should use the precision parameter and mask it from the browser api', function * () {
-    let loc = yield getLocation({ precision: 3 });
+  it('should use the precision parameter and mask it from the browser api', async function () {
+    let loc = await getLocation({ precision: 3 });
     expect(navigator.geolocation.getCurrentPosition).to.have.been.called;
     expect(navigator.geolocation.getCurrentPosition.firstCall.args[2]).to.be.empty;
     expect(loc).to.eql({
@@ -43,21 +43,21 @@ describe('get-location', () => {
     });
   });
 
-  it('should be able to setup a global parameter object', function * () {
+  it('should be able to setup a global parameter object', async function () {
     setup({ precision: 0 });
-    let loc = yield getLocation({ precision: 3 });
+    let loc = await getLocation({ precision: 3 });
     expect(loc.coords.latitude).to.equal(47);
     expect(loc.coords.longitude).to.equal(19);
 
     // mostly for testing
     teardown();
-    loc = yield getLocation();
+    loc = await getLocation();
     expect(loc.coords.latitude).to.equal(47.4735167);
     expect(loc.coords.longitude).to.equal(19.14525489998);
   });
 
-  it('should not remove real api params', function * () {
-    yield getLocation({ enableHighAccuracy: true });
+  it('should not remove real api params', async function () {
+    await getLocation({ enableHighAccuracy: true });
     expect(navigator.geolocation.getCurrentPosition).to.have.been.called;
     expect(navigator.geolocation.getCurrentPosition.firstCall.args[2]).to.eql({
       enableHighAccuracy: true
