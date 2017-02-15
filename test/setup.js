@@ -6,8 +6,11 @@ require('babel-polyfill');
 const sinon = require('sinon');
 const mocha = require('mocha');
 const coMocha = require('co-mocha');
+const chai = require('chai');
+const sinonChai = require('sinon-chai');
 
 coMocha(mocha);
+chai.use(sinonChai);
 
 beforeEach(function () {
   this.sandbox = sinon.sandbox.create();
